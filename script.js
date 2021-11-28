@@ -2,8 +2,9 @@ let userColor;
 
 $(document).ready(function(){
     paintingCanvas.initialize();
-
-
+    $("#circle-container-1").hide();
+    $("#circle-container-2").hide();
+    $("#circle-container-3").hide();
     // $("#main-page").hide(); // to test canvas page
     // $("#starting-page").hide();
 
@@ -19,7 +20,7 @@ $(document).ready(function(){
     setTimeout(function() {
         $("#logo-starting-page").hide();
         $("#survey").show();
-    }, 4000);
+    }, 4000)
 
     // after user submit survey, hide survey and show survey result
     $("#submit-button-one").click(function(){
@@ -133,6 +134,7 @@ $(document).ready(function(){
         if (57 <= current_time) {
             console.log("paused");
             main_video.pause();
+            $("#circle-container-1").show();
         }
     }
 
@@ -233,6 +235,7 @@ function paint(){
     var startPos; 
     var prevPos;
     var dist = {x: 0, y: 0};
+    var colour = '#'+Math.floor(Math.random()*16777215).toString(16);
     
     
     this.initialize = function(){
@@ -298,8 +301,8 @@ function paint(){
        context.moveTo(startPos.x, startPos.y);
        context.quadraticCurveTo(dist.x, dist.y, prevPos.x, prevPos.y);
        
-       context.fillStyle = userColor;
-       context.strokeStyle = userColor;
+       context.fillStyle = colour;
+       context.strokeStyle = colour;
     
        context.moveTo(startPos.x + a, startPos.y + a);
        context.lineTo(startPos.x + r + a, startPos.y + r + a);
@@ -312,10 +315,10 @@ function paint(){
     
     //Changes color
     var MouseDown = function(e) {
-        // e.preventDefault();
-        // colour = '#'+Math.floor(Math.random()*16777215).toString(16);
-        // context.fillStyle = userColor;
-        // context.strokeStyle = userColor;
+        e.preventDefault();
+        colour = '#'+Math.floor(Math.random()*16777215).toString(16);
+        context.fillStyle = colour;
+        context.strokeStyle = colour;
     }
     
     //Clear paint
