@@ -83,6 +83,7 @@ body {
 
 .icon-bar {
     position: absolute;
+    z-index:2;
     left: 3%;
     bottom: 3%;
     display: flex;
@@ -110,6 +111,8 @@ body {
     color: black;
     font-size: 3vw;
     font-weight: bold;
+    pointer-events: none;
+    z-index: 2;
 
     /* make the text unselectable */
     -webkit-touch-callout: none; /* iOS Safari */
@@ -122,16 +125,16 @@ body {
 
 }
 
-#user-canvas {
+#canvas {
     /* full screen */
     position: fixed;
     bottom: 0;
     right: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    z-index: -1; /* use as background */
+    width:100%;
+    height:100%;
+    z-index: 1; /* use as background */
 
-    background-color: white;
+    background-color: transparent;
     /* cursor: url('#cursor-svg'), auto; */ /* for custom cursor image */
 }
 

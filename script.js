@@ -1,14 +1,16 @@
 var current_page = "starting_page"; // "starting_page", "main_page", "last_page"
 
 $(document).ready(function(){
-    // $("#main-page").hide(); // to test canvas page
-    // $("#starting-page").hide();
 
-    $("#survey").hide(); // hide survey until the logo gif is finished
-    $("#survey-result").hide();
-    $("#unmuted-svg").hide(); // main video muted by default
-    $("#main-page").hide(); // hide other pages in the beginning
-    $("#last-page").hide();
+    paintingCanvas.initialize();
+    $("#main-page").hide(); // to test canvas page
+    $("#starting-page").hide();
+
+    // $("#survey").hide(); // hide survey until the logo gif is finished
+    // $("#survey-result").hide();
+    // $("#unmuted-svg").hide(); // main video muted by default
+    // $("#main-page").hide(); // hide other pages in the beginning
+    // $("#last-page").hide();
 
     // #1. STARTING PAGE
     // after logo display, show user survey
@@ -51,51 +53,51 @@ $(document).ready(function(){
 
     // #3. LAST PAGE
     // allow users to draw on canvas
-    const canvas = document.getElementById("user-canvas");
-    const ctx = canvas.getContext("2d");
-    var coord = { x: 0, y: 0 };
-    var start_drawing;
-    var user_color = "#ACD3ED"; // sample user color
+    // const canvas = document.getElementById("user-canvas");
+    // const ctx = canvas.getContext("2d");
+    // var coord = { x: 0, y: 0 };
+    // var start_drawing;
+    // var user_color = "#ACD3ED"; // sample user color
 
-    resize(); // resize in the beginning
-    document.addEventListener("mousedown", start);
-    document.addEventListener("mouseup", stop);
-    document.addEventListener('mousemove', draw); // draw path along the mouse move
-    window.addEventListener('resize', resize);
+    // resize(); // resize in the beginning
+    // document.addEventListener("mousedown", start);
+    // document.addEventListener("mouseup", stop);
+    // document.addEventListener('mousemove', draw); // draw path along the mouse move
+    // window.addEventListener('resize', resize);
 
-    // resize the canvas according to the current window
-    function resize(){
-        ctx.canvas.width = window.innerWidth;
-        ctx.canvas.height = window.innerHeight;
-    }
+    // // resize the canvas according to the current window
+    // function resize(){
+    //     ctx.canvas.width = window.innerWidth;
+    //     ctx.canvas.height = window.innerHeight;
+    // }
     
-    // update the position of the cursor
-    function reposition(event) {
-        coord.x = event.clientX - canvas.offsetLeft;
-        coord.y = event.clientY - canvas.offsetTop;
-    }
+    // // update the position of the cursor
+    // function reposition(event) {
+    //     coord.x = event.clientX - canvas.offsetLeft;
+    //     coord.y = event.clientY - canvas.offsetTop;
+    // }
 
-    function start(event) {
-        start_drawing = true;
-        reposition(event);
-    }
+    // function start(event) {
+    //     start_drawing = true;
+    //     reposition(event);
+    // }
 
-    function stop() {
-        start_drawing = false;
-    }
+    // function stop() {
+    //     start_drawing = false;
+    // }
 
-    function draw(event) {
-        if (start_drawing) {
-            ctx.beginPath();
-            ctx.lineWidth = 5;
-            ctx.lineCap = "round";
-            ctx.strokeStyle = user_color;
-            ctx.moveTo(coord.x, coord.y); // cursor (starting point for drawing) moves to this coord
-            reposition(event); // mouse position updated constantly
-            ctx.lineTo(coord.x, coord.y); // line traced from start coord to this coord
-            ctx.stroke(); // draw the line
-        }
-    }
+    // function draw(event) {
+    //     if (start_drawing) {
+    //         ctx.beginPath();
+    //         ctx.lineWidth = 5;
+    //         ctx.lineCap = "round";
+    //         ctx.strokeStyle = user_color;
+    //         ctx.moveTo(coord.x, coord.y); // cursor (starting point for drawing) moves to this coord
+    //         reposition(event); // mouse position updated constantly
+    //         ctx.lineTo(coord.x, coord.y); // line traced from start coord to this coord
+    //         ctx.stroke(); // draw the line
+    //     }
+    // }
 
     $("#restart-button").click(function(){
         // reset settings
@@ -115,3 +117,115 @@ $(document).ready(function(){
         }, 4000)
     });
 });
+
+//Drawing
+//The following function for the mouse tracking paint effect has been adapted from Tim Holman's "Oil Painting" found here
+//https://codepen.io/tholman/pen/ifDak
+
+// Oil Painting
+// Ported from flash project - http://wonderfl.net/c/92Ul
+
+function paint(){
+  
+    var canvas;
+    var context;
+
+    var width;
+    var height;
+
+    var startPos; 
+    var prevPos;
+    var dist = {x: 0, y: 0};
+    var colour = '#'+Math.floor(Math.random()*16777215).toString(16);
+    
+    
+    this.initialize = function(){
+        canvas  = document.getElementById("canvas");
+        context = canvas.getContext('2d');
+    
+        width = window.innerWidth
+        height = window.innerHeight
+        console.log("Width: " + width)
+        canvas.width = width;
+        canvas.height = height;
+    
+        canvas.addEventListener('mousemove', MouseMove, false);
+        canvas.addEventListener('click', MouseDown, false);
+        canvas.addEventListener('dblclick', Clear, false);  
+
+        startPos = {x: width/2, y: height/2};
+        prevPos = {x: -1, y: -1};
+    }
+    
+    
+    var MouseMove = function(e) {
+        // console.log(e.clientX + ", " + e.clientY)
+        var distance = Math.sqrt(Math.pow(prevPos.x - startPos.x, 2) +
+                                 Math.pow(prevPos.y - startPos.y, 2));
+                                 
+        var a = distance * 10 * (Math.pow(Math.random(), 2) - 0.5);
+        
+        var r = Math.random() - 0.5;
+        
+        var size = (Math.random() * 15) / distance;
+        
+        dist.x = (prevPos.x - startPos.x) * Math.sin(0.5) + startPos.x;
+        dist.y = (prevPos.y - startPos.y) * Math.cos(0.5) + startPos.y;
+        
+        startPos.x = prevPos.x;
+        startPos.y = prevPos.y;
+
+        //Check if just starting
+        if(startPos.x == -1 && startPos.y == -1){
+            startPos.x = e.clientX;
+            startPos.y = e.clientY;
+        }
+
+        //Normalize to scaled canvas
+        // console.log(e.clientY + ", " + parseInt($("#canvas").css("height")) + ", " + canvas.height)
+        let x = (e.clientX / parseInt($("#canvas").css("width"))) * canvas.width;
+        let y = (e.clientY / parseInt($("#canvas").css("height"))) * canvas.height;
+
+        // console.log(x + ", " + y)
+
+        prevPos.x = x;
+        prevPos.y = y;
+       
+       // ------- Draw -------
+       var lWidth = (Math.random()+20/10-0.5)*size+(1-Math.random()+30/20-0.5)*size;
+       context.lineWidth = lWidth;
+       context.strokeWidth = lWidth;
+       
+       context.lineCap = 'round';
+        context.lineJoin = 'round';
+       context.beginPath(); 
+       context.moveTo(startPos.x, startPos.y);
+       context.quadraticCurveTo(dist.x, dist.y, prevPos.x, prevPos.y);
+       
+       context.fillStyle = colour;
+       context.strokeStyle = colour;
+    
+       context.moveTo(startPos.x + a, startPos.y + a);
+       context.lineTo(startPos.x + r + a, startPos.y + r + a);
+       
+       context.stroke();
+       context.fill();
+       
+       context.closePath();
+    }
+    
+    //Changes color
+    var MouseDown = function(e) {
+        e.preventDefault();
+        colour = '#'+Math.floor(Math.random()*16777215).toString(16);
+        context.fillStyle = colour;
+        context.strokeStyle = colour;
+    }
+    
+    //Clear paint
+    var Clear = function(e) {
+        e.preventDefault();
+        context.clearRect(0, 0, width, height);
+    }   
+}
+var paintingCanvas = new paint();
