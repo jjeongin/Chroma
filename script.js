@@ -122,6 +122,11 @@ $(document).ready(function(){
         }, 3500)
     });
 
+
+    //Checkpoints used to determine which section of the vide owe are in
+    let checkpointOne = false; 
+    let checkpointTwo = false; 
+
     // #2. MAIN PAGE
     // detect the time after the main video has started playing
     var current_time = 0.0;
@@ -131,12 +136,22 @@ $(document).ready(function(){
         current_time = main_video.currentTime;
         console.log(current_time);
 
-        if (57 <= current_time) {
+        if (57 <= current_time && !checkpointOne) {
             console.log("paused");
+            checkpointOne = true;
             main_video.pause();
+            $("#continue-button").show();
             $("#circle-container-1").show();
         }
     }
+
+    //Continue past first pause
+    $("#continue-button").click(function(){
+        main_video.play();
+        $("#continue-button").hide();
+        $("#circle-container-1").hide();
+        $("#circle-container-2").hide();
+    });
 
     // mute and unmute the main video
     $("#muted-svg").click(function(){ // if muted before
@@ -235,7 +250,6 @@ function paint(){
     var startPos; 
     var prevPos;
     var dist = {x: 0, y: 0};
-    var colour = '#'+Math.floor(Math.random()*16777215).toString(16);
     
     
     this.initialize = function(){
@@ -248,9 +262,7 @@ function paint(){
         canvas.width = width;
         canvas.height = height;
     
-        canvas.addEventListener('mousemove', MouseMove, false);
-        canvas.addEventListener('click', MouseDown, false);
-        canvas.addEventListener('dblclick', Clear, false);  
+        canvas.addEventListener('mousemove', MouseMove, false); 
 
         startPos = {x: width/2, y: height/2};
         prevPos = {x: -1, y: -1};
@@ -301,8 +313,8 @@ function paint(){
        context.moveTo(startPos.x, startPos.y);
        context.quadraticCurveTo(dist.x, dist.y, prevPos.x, prevPos.y);
        
-       context.fillStyle = colour;
-       context.strokeStyle = colour;
+       context.fillStyle = userColor;
+       context.strokeStyle = userColor;
     
        context.moveTo(startPos.x + a, startPos.y + a);
        context.lineTo(startPos.x + r + a, startPos.y + r + a);
@@ -314,17 +326,12 @@ function paint(){
     }
     
     //Changes color
-    var MouseDown = function(e) {
-        e.preventDefault();
-        colour = '#'+Math.floor(Math.random()*16777215).toString(16);
-        context.fillStyle = colour;
-        context.strokeStyle = colour;
-    }
-    
-    //Clear paint
-    var Clear = function(e) {
-        e.preventDefault();
-        context.clearRect(0, 0, width, height);
-    }   
+    // var MouseDown = function(e) {
+    //     e.preventDefault();
+    //     userColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    //     context.fillStyle = userColor;
+    //     context.strokeStyle = userColor;
+    // }
+     
 }
 var paintingCanvas = new paint();

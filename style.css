@@ -118,6 +118,15 @@ body {
     right: 3%;
 }
 
+#continue-button{
+    position:absolute;
+    display:none;
+    height:6%;
+    top:5%;
+    left:5%;
+    cursor: pointer;
+}
+
 #main-video {
     /* full screen */
     width: 100vw; 
