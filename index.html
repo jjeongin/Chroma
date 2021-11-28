@@ -10,7 +10,7 @@
     </head>
     <body>
         <div id="starting-page">
-            <img id="logo-starting-page" src="logo/logo-starting-page-final.gif">
+            <img id="logo-starting-page" src="img/logo/logo-starting-page-final.gif">
             <div id="survey">
                 <div id="question-1-container">
                     <p id="question-1">Question 1</p>
@@ -30,30 +30,42 @@
         </div>
 
         <div id="main-page">
-            <img id="logo" src="logo/logo.PNG">
+            <img id="logo" src="img/logo/logo.PNG">
+
             <video autoplay muted id="main-video">
-                <source src="video/why-i-love-the-moon.mp4" type="video/mp4">
+                <source src="video/web-main-video-actors.mov" type="video/quicktime">
+                <source src="video/web-main-video-actors.webm" type="video/webm">
             </video>
 
-            <div id="mute-unmute">
-                <!-- mute button -->
-                <svg id="muted-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="50" height="50"
-                viewBox="0 0 226 226"
-                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#cccccc"><path d="M82.86667,52.73333l-31.69297,30.13333h-28.5737c-12.48273,0 -22.6,10.11727 -22.6,22.6v15.06667c0,12.48273 10.11727,22.6 22.6,22.6h28.5737l31.69297,30.13333zM127.9931,75.25977c-3.06549,0.00081 -5.82484,1.85889 -6.97836,4.69907c-1.15352,2.84018 -0.47118,6.09608 1.72563,8.23413l24.80703,24.80703l-24.80703,24.80703c-1.96801,1.88948 -2.76078,4.69528 -2.07256,7.33527c0.68822,2.64 2.74989,4.70167 5.38989,5.38989c2.64,0.68822 5.44579,-0.10455 7.33527,-2.07256l24.80703,-24.80703l24.80703,24.80703c1.88948,1.96801 4.69528,2.76078 7.33527,2.07256c2.64,-0.68822 4.70167,-2.74989 5.38989,-5.38989c0.68822,-2.64 -0.10455,-5.44579 -2.07256,-7.33527l-24.80703,-24.80703l24.80703,-24.80703c2.22806,-2.16577 2.89799,-5.47723 1.68697,-8.33874c-1.21101,-2.86151 -4.05454,-4.68605 -7.16041,-4.59446c-1.95715,0.05832 -3.81472,0.87628 -5.17917,2.2806l-24.80703,24.80703l-24.80703,-24.80703c-1.41831,-1.45795 -3.36586,-2.28048 -5.39987,-2.2806z"></path></g></g></svg>
-                
-                <!-- unmute button  -->
-                <svg id="unmuted-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="50" height="50"
-                viewBox="0 0 226 226"
-                style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#cccccc"><path d="M82.86667,52.73333l-31.67826,30.13333h-28.58841c-12.48273,0 -22.6,10.11727 -22.6,22.6v15.06667c0,12.48273 10.11727,22.6 22.6,22.6h28.58841l31.67826,30.13333zM111.02838,64.72487c-3.06081,-0.06553 -5.85693,1.72764 -7.07421,4.53675c-1.21728,2.80911 -0.61364,6.07551 1.52721,8.26403c9.32248,9.76673 15.05195,22.87977 15.05195,37.40182c0,12.98118 -4.57606,24.84452 -12.19753,34.20899c-1.80037,2.07619 -2.3275,4.96795 -1.37551,7.54586c0.952,2.57791 3.23208,4.43299 5.94974,4.84072c2.71766,0.40773 5.44174,-0.69659 7.10832,-2.88163c9.70519,-11.92473 15.58164,-27.17951 15.58164,-43.71394c0,-18.50408 -7.35464,-35.37782 -19.21588,-47.80429c-1.38775,-1.49041 -3.31973,-2.35555 -5.35573,-2.39831z"></path></g></g></svg>
+            <div class="icon-bar">
+                <div id="mute-unmute">
+                    <!-- mute button -->
+                    <svg id="muted-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="50" height="50"
+                    viewBox="0 0 226 226"
+                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#cccccc"><path d="M82.86667,52.73333l-31.69297,30.13333h-28.5737c-12.48273,0 -22.6,10.11727 -22.6,22.6v15.06667c0,12.48273 10.11727,22.6 22.6,22.6h28.5737l31.69297,30.13333zM127.9931,75.25977c-3.06549,0.00081 -5.82484,1.85889 -6.97836,4.69907c-1.15352,2.84018 -0.47118,6.09608 1.72563,8.23413l24.80703,24.80703l-24.80703,24.80703c-1.96801,1.88948 -2.76078,4.69528 -2.07256,7.33527c0.68822,2.64 2.74989,4.70167 5.38989,5.38989c2.64,0.68822 5.44579,-0.10455 7.33527,-2.07256l24.80703,-24.80703l24.80703,24.80703c1.88948,1.96801 4.69528,2.76078 7.33527,2.07256c2.64,-0.68822 4.70167,-2.74989 5.38989,-5.38989c0.68822,-2.64 -0.10455,-5.44579 -2.07256,-7.33527l-24.80703,-24.80703l24.80703,-24.80703c2.22806,-2.16577 2.89799,-5.47723 1.68697,-8.33874c-1.21101,-2.86151 -4.05454,-4.68605 -7.16041,-4.59446c-1.95715,0.05832 -3.81472,0.87628 -5.17917,2.2806l-24.80703,24.80703l-24.80703,-24.80703c-1.41831,-1.45795 -3.36586,-2.28048 -5.39987,-2.2806z"></path></g></g></svg>
+                    
+                    <!-- unmute button  -->
+                    <svg id="unmuted-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                    width="50" height="50"
+                    viewBox="0 0 226 226"
+                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g fill="#cccccc"><path d="M82.86667,52.73333l-31.67826,30.13333h-28.58841c-12.48273,0 -22.6,10.11727 -22.6,22.6v15.06667c0,12.48273 10.11727,22.6 22.6,22.6h28.58841l31.67826,30.13333zM111.02838,64.72487c-3.06081,-0.06553 -5.85693,1.72764 -7.07421,4.53675c-1.21728,2.80911 -0.61364,6.07551 1.52721,8.26403c9.32248,9.76673 15.05195,22.87977 15.05195,37.40182c0,12.98118 -4.57606,24.84452 -12.19753,34.20899c-1.80037,2.07619 -2.3275,4.96795 -1.37551,7.54586c0.952,2.57791 3.23208,4.43299 5.94974,4.84072c2.71766,0.40773 5.44174,-0.69659 7.10832,-2.88163c9.70519,-11.92473 15.58164,-27.17951 15.58164,-43.71394c0,-18.50408 -7.35464,-35.37782 -19.21588,-47.80429c-1.38775,-1.49041 -3.31973,-2.35555 -5.35573,-2.39831z"></path></g></g></svg>
+                </div>
+                <div class="user-color-smaller"></div>
             </div>
-
-            <div id="user-color-smaller"></div>
         </div>
 
         <div id="last-page">
+            <p id="last-page-instruction">Now, draw with your own color !</p>
             <canvas id="user-canvas"></canvas>
+            <div class="icon-bar">
+                <!-- restart button -->
+                <svg id="restart-button" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                width="30" height="30"
+                viewBox="0 0 172 172"
+                style=" fill:#ffffff;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#cccccc"><path d="M86,17.2c-17.50875,0 -33.4855,6.62414 -45.64271,17.42396l-11.69062,-11.69062v34.4h34.4l-14.59089,-14.59089c10.05879,-8.73791 23.12223,-14.07578 37.52422,-14.07578c31.73133,0 57.33333,25.60201 57.33333,57.33333c0,31.73133 -25.60201,57.33333 -57.33333,57.33333c-31.73133,0 -57.33333,-25.60201 -57.33333,-57.33333c0.02924,-2.06765 -1.05709,-3.99087 -2.843,-5.03322c-1.78592,-1.04236 -3.99474,-1.04236 -5.78066,0c-1.78592,1.04236 -2.87225,2.96558 -2.843,5.03322c0,37.92867 30.87133,68.8 68.8,68.8c37.92867,0 68.8,-30.87133 68.8,-68.8c0,-37.92867 -30.87133,-68.8 -68.8,-68.8z"></path></g></g></svg>
+                <div class="user-color-smaller"></div>
+            </div>
         </div>
     </body>
 </html>

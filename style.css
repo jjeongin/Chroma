@@ -1,20 +1,25 @@
-html {
+* { 
     margin: 0;
-    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
     height: 100%;
+    background-color: white;
 }
 
 body {
     font-family: Arial;
-    margin: 0;
-    height: 100%;
-    /* cursor: url("") 16 0,auto; */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* starting page */
 #starting-page {
-    margin: 0;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,8 +46,6 @@ body {
 /* maing page */
 
 #main-page {
-    margin: 0;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,35 +62,49 @@ body {
 #main-video {
     /* full screen */
     position: fixed;
-    right: 0;
     bottom: 0;
+    right: 0;
     min-width: 100%; 
     min-height: 100%;
     z-index: -1; /* use as background */
 }
 
-#muted-svg {
+.icon-bar {
     position: absolute;
     left: 3%;
     bottom: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    height: 50px;
 }
 
-#unmuted-svg {
-    position: absolute;
-    left: 3%;
-    bottom: 3%;
-}
-
-#user-color-smaller {
+.user-color-smaller {
     width: 30px;
     height: 30px;
     background-color: skyblue; /* sample user color */
-    position: absolute;
-    left: 10%;
-    bottom: 4%;
+}
+
+/* last page */
+#last-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#last-page-instruction {
+    color: black;
+    font-size: 3vw;
 }
 
 #user-canvas {
-    width: 100vw;
-    height: 100vh;
+    background-color: white;
+    /* cursor: url('#cursor-svg'), auto; */ /* for custom cursor image */
+}
+
+#restart-button {
+    width: 40px;
+    height: 40px;
 }
