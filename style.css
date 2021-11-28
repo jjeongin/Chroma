@@ -162,23 +162,23 @@ body {
 }
 
 #blue-circle {
-    border-color: blue !important;
+    border-color: rgb(59, 121, 255) !important;
     position: relative;
-    left: 40%;
-    top: 17%;
+    left: 41%;
+    top: 18%;
     z-index: 0;
 }
 
 #red-circle {
-    border-color: red !important;
+    border-color: rgb(255, 72, 59) !important;
     position: relative;
-    left: 78%;
-    top: 16%;
+    left: 75%;
+    top: 10%;
     z-index: 1;
 }
 
 #yellow-circle {
-    border-color: yellow !important;
+    border-color: rgb(245, 255, 59) !important;
     position: relative;
     left: 8%;
     top: 38%;
@@ -186,19 +186,27 @@ body {
 }
 
 #orange-circle {
-    border-color: orange !important;
+    border-color: rgb(255, 170, 51) !important;
+    position: relative;
+    left: 77%;
+    top: 28%;
+    z-index: 1;
 }
 
 #purple-circle {
-    border-color: purple !important;
+    border-color: rgb(132, 38, 255) !important;
+    position: relative;
+    left: 35%;
+    top: 7%;
+    z-index: 0;
 }
 
 #green-circle {
-    border-color: green !important;
-}
-
-#white-circle {
-    border-color: white !important;
+    border-color: rgb(50, 168, 82) !important;
+    position: relative;
+    left: 11%;
+    top: 11%;
+    z-index: 2;
 }
 
 #red-interview{

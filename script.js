@@ -4,7 +4,6 @@ $(document).ready(function(){
     paintingCanvas.initialize();
     $("#circle-container-1").hide();
     $("#circle-container-2").hide();
-    $("#circle-container-3").hide();
     // $("#main-page").hide(); // to test canvas page
     // $("#starting-page").hide();
 
@@ -20,7 +19,7 @@ $(document).ready(function(){
     setTimeout(function() {
         $("#logo-starting-page").hide();
         $("#survey").show();
-    }, 4000)
+    }, 4000);
 
     // after user submit survey, hide survey and show survey result
     $("#submit-button-one").click(function(){
@@ -112,7 +111,6 @@ $(document).ready(function(){
         for (var i = 0; i < colors.length; i++) {
           colors[i].style.backgroundColor = userColor;
         }
-
         $("#survey-result").show();
 
         // after displaying user color shortly, start main page
@@ -122,26 +120,32 @@ $(document).ready(function(){
         }, 3500)
     });
 
-
+    // #2. MAIN PAGE
     //Checkpoints used to determine which section of the vide owe are in
     let checkpointOne = false; 
     let checkpointTwo = false; 
 
-    // #2. MAIN PAGE
     // detect the time after the main video has started playing
     var current_time = 0.0;
     const main_video = document.getElementById("main-video");
     main_video.ontimeupdate = function() {pause_video_at_timestamp()};
+    main_video.defaultPlaybackRate = 2.0; // change video rate to x2.0
     function pause_video_at_timestamp() {
         current_time = main_video.currentTime;
         console.log(current_time);
 
         if (57 <= current_time && !checkpointOne) {
-            console.log("paused");
             checkpointOne = true;
             main_video.pause();
             $("#continue-button").show();
             $("#circle-container-1").show();
+        }
+
+        if (114 <= current_time && !checkpointTwo) {
+            checkpointTwo = true;
+            main_video.pause();
+            $("#continue-button").show();
+            $("#circle-container-2").show();
         }
     }
 
@@ -349,12 +353,18 @@ $(document).ready(function(){
 
         $("#starting-page").show(); // restart the starting page
         $("#logo-starting-page").show(); // redisplay the starting logo
+
+        setTimeout(function() {
+            $("#logo-starting-page").hide();
+            $("#survey").show();
+        }, 4000)
     });
 });
 
 //Drawing
 //The following function for the mouse tracking paint effect has been adapted from Tim Holman's "Oil Painting" found here
 //https://codepen.io/tholman/pen/ifDak
+
 
 // Oil Painting
 // Ported from flash project - http://wonderfl.net/c/92Ul
