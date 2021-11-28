@@ -1,14 +1,14 @@
 var current_page = "starting_page"; // "starting_page", "main_page", "last_page"
 
 $(document).ready(function(){
-    $("#main-page").hide(); // to test canvas page
-    $("#starting-page").hide();
+    // $("#main-page").hide(); // to test canvas page
+    // $("#starting-page").hide();
 
-    // $("#survey").hide(); // hide survey until the logo gif is finished
-    // $("#survey-result").hide();
-    // $("#unmuted-svg").hide(); // main video muted by default
-    // $("#main-page").hide(); // hide other pages in the beginning
-    // $("#last-page").hide();
+    $("#survey").hide(); // hide survey until the logo gif is finished
+    $("#survey-result").hide();
+    $("#unmuted-svg").hide(); // main video muted by default
+    $("#main-page").hide(); // hide other pages in the beginning
+    $("#last-page").hide();
 
     // #1. STARTING PAGE
     // after logo display, show user survey
