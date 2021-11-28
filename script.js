@@ -1,16 +1,20 @@
 var current_page = "starting_page"; // "starting_page", "main_page", "last_page"
 
+let userColor;
+
 $(document).ready(function(){
 
     paintingCanvas.initialize();
-    $("#main-page").hide(); // to test canvas page
-    $("#starting-page").hide();
 
-    // $("#survey").hide(); // hide survey until the logo gif is finished
-    // $("#survey-result").hide();
-    // $("#unmuted-svg").hide(); // main video muted by default
-    // $("#main-page").hide(); // hide other pages in the beginning
-    // $("#last-page").hide();
+
+    // $("#main-page").hide(); // to test canvas page
+    // $("#starting-page").hide();
+
+    $("#survey").hide(); // hide survey until the logo gif is finished
+    $("#survey-result").hide();
+    $("#unmuted-svg").hide(); // main video muted by default
+    $("#main-page").hide(); // hide other pages in the beginning
+    $("#last-page").hide();
 
     // #1. STARTING PAGE
     // after logo display, show user survey
@@ -18,18 +22,106 @@ $(document).ready(function(){
     setTimeout(function() {
         $("#logo-starting-page").hide();
         $("#survey").show();
-    }, 4000)
+    }, 4000);
 
     // after user submit survey, hide survey and show survey result
-    $("#submit-button").click(function(){
+    $("#submit-button-one").click(function(){
+        $("#question-one-container").hide();
+        $("#question-two-container").show();
+        $("#submit-button-one").hide();
+        $("#submit-button-two").show();
+    });
+    // after user submit survey, hide survey and show survey result
+    $("#submit-button-two").click(function(){
+        $("#question-two-container").hide();
+        $("#question-three-container").show();
+        $("#submit-button-two").hide();
+        $("#submit-button-three").show();
+    });
+    // after user submit survey, hide survey and show survey result
+    $("#submit-button-three").click(function(){
+        $("#question-three-container").hide();
+        $("#question-four-container").show();
+        $("#submit-button-three").hide();
+        $("#submit-button-four").show();
+    });
+    // after user submit survey, hide survey and show survey result
+    $("#submit-button-four").click(function(){
+        $("#submit-button-four").hide();
+        $("#question-four-container").hide();
         $("#survey").hide();
+
+        //Calculate result (0-15)
+        let result = 
+            parseInt(document.querySelector('input[name="answer-1"]:checked').value) + 
+            parseInt(document.querySelector('input[name="answer-2"]:checked').value) * Math.pow(2, 1) + 
+            parseInt(document.querySelector('input[name="answer-3"]:checked').value) * Math.pow(2, 2) + 
+            parseInt(document.querySelector('input[name="answer-4"]:checked').value) * Math.pow(2, 3);
+        
+        switch (result) {
+            case 0:
+                userColor='#98FBE8';
+            break;
+            case 1:
+                userColor='#D9919D';
+            break;
+            case 2:
+                userColor='#54D1F7';
+            break;
+            case 3:
+                userColor='#5C3A92';
+            break;
+            case 4:
+                userColor='#7EE8C8';
+            break;
+            case 5:
+                userColor='#79E002';
+            break;
+            case 6:
+                userColor='#2B5D07';
+            break;
+            case 7:
+                userColor='#EABDA1';
+            break;
+            case 8:
+                userColor='#CA7239';
+            break;
+            case 9:
+                userColor='#AE29F5';
+            break;
+            case 10:
+                userColor='#766731';
+            break;
+            case 12:
+                userColor='#89A502';
+            break;
+            case 13:
+                userColor='#BB842A';
+            break;
+            case 14:
+                userColor='#A23FB1';
+            break;
+            case 15:
+                userColor='#251E5E';
+            break;
+          default:
+                userColor='#BEA8D9';
+        }
+
+        //Update colors
+        document.getElementById("user-color").style.backgroundColor = userColor;
+        var colors = document.getElementsByClassName('user-color-smaller');
+        for (var i = 0; i < colors.length; i++) {
+          colors[i].style.backgroundColor = userColor;
+        }
+
         $("#survey-result").show();
 
         // after displaying user color shortly, start main page
         setTimeout(function() {
             $("#starting-page").hide();
             $("#main-page").show();
-        }, 2500)
+        }, 3500)
     });
 
     // #2. MAIN PAGE
@@ -136,7 +228,6 @@ function paint(){
     var startPos; 
     var prevPos;
     var dist = {x: 0, y: 0};
-    var colour = '#'+Math.floor(Math.random()*16777215).toString(16);
     
     
     this.initialize = function(){
@@ -202,8 +293,8 @@ function paint(){
        context.moveTo(startPos.x, startPos.y);
        context.quadraticCurveTo(dist.x, dist.y, prevPos.x, prevPos.y);
        
-       context.fillStyle = colour;
-       context.strokeStyle = colour;
+       context.fillStyle = userColor;
+       context.strokeStyle = userColor;
     
        context.moveTo(startPos.x + a, startPos.y + a);
        context.lineTo(startPos.x + r + a, startPos.y + r + a);
@@ -216,10 +307,10 @@ function paint(){
     
     //Changes color
     var MouseDown = function(e) {
-        e.preventDefault();
-        colour = '#'+Math.floor(Math.random()*16777215).toString(16);
-        context.fillStyle = colour;
-        context.strokeStyle = colour;
+        // e.preventDefault();
+        // colour = '#'+Math.floor(Math.random()*16777215).toString(16);
+        // context.fillStyle = userColor;
+        // context.strokeStyle = userColor;
     }
     
     //Clear paint
