@@ -1,3 +1,5 @@
+var current_page = "starting_page"; // "starting_page", "main_page", "last_page"
+
 $(document).ready(function(){
     // $("#main-page").hide(); // to test canvas page
     // $("#starting-page").hide();
@@ -10,10 +12,11 @@ $(document).ready(function(){
 
     // #1. STARTING PAGE
     // after logo display, show user survey
-    $("#logo-starting-page").delay(4000).queue(function(){ // gif length is 4.86 sec
+    $("#logo-starting-page").show();
+    setTimeout(function() {
         $("#logo-starting-page").hide();
         $("#survey").show();
-    });
+    }, 4000)
 
     // after user submit survey, hide survey and show survey result
     $("#submit-button").click(function(){
@@ -104,6 +107,11 @@ $(document).ready(function(){
         start_drawing = false;
         // user_color = ; // reset user color to default
 
-        $("#starting-page").show();
+        $("#starting-page").show(); // restart the starting page
+        $("#logo-starting-page").show(); // redisplay the starting logo
+        setTimeout(function() {
+            $("#logo-starting-page").hide();
+            $("#survey").show();
+        }, 4000)
     });
 });
