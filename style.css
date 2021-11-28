@@ -201,6 +201,68 @@ body {
     border-color: white !important;
 }
 
+#red-interview{
+    display:none;
+    background-color:red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50vw; 
+    height: 28.125vw; /* 16/9 aspect ratio */
+}
+#blue-interview{
+    display:none;
+    background-color:blue;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50vw; 
+    height: 28.125vw; /* 16/9 aspect ratio */
+}
+#yellow-interview{
+    display:none;
+    background-color:yellow;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50vw; 
+    height: 28.125vw; /* 16/9 aspect ratio */
+}
+#orange-interview{
+    display:none;
+    background-color:orange;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50vw; 
+    height: 28.125vw; /* 16/9 aspect ratio */
+}
+#purple-interview{
+    display:none;
+    background-color:purple;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50vw; 
+    height: 28.125vw; /* 16/9 aspect ratio */
+}
+#green-interview{
+    display:none;
+    background-color:green;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50vw; 
+    height: 28.125vw; /* 16/9 aspect ratio */
+}
+
+
 .icon-bar {
     position: absolute;
     z-index:2;

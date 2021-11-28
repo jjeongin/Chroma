@@ -145,12 +145,132 @@ $(document).ready(function(){
         }
     }
 
+    const blueInterview = document.getElementById("blue-interview");
+    const redInterview = document.getElementById("red-interview");
+    const yellowInterview = document.getElementById("yellow-interview");
+    const greenInterview = document.getElementById("orange-interview");
+    const orangeInterview = document.getElementById("green-interview");
+    const purpleInterview = document.getElementById("purple-interview");
+
+    //On clicks of circles, show interviews
+    $("#blue-circle").click(function(){
+        redInterview.pause();
+        blueInterview.play();
+        yellowInterview.pause();
+        orangeInterview.pause();
+        greenInterview.pause();
+        purpleInterview.pause();
+        redInterview.style.display='none';
+        blueInterview.style.display='block';
+        yellowInterview.style.display='none';
+        orangeInterview.style.display='none';
+        greenInterview.style.display='none';
+        purpleInterview.style.display='none';
+    });
+    $("#yellow-circle").click(function(){
+        redInterview.pause();
+        blueInterview.pause();
+        yellowInterview.play();
+        orangeInterview.pause();
+        greenInterview.pause();
+        purpleInterview.pause();
+        redInterview.style.display='none';
+        blueInterview.style.display='none';
+        yellowInterview.style.display='block';
+        orangeInterview.style.display='none';
+        greenInterview.style.display='none';
+        purpleInterview.style.display='none';
+    });
+    $("#red-circle").click(function(){
+        redInterview.play();
+        blueInterview.pause();
+        yellowInterview.pause();
+        orangeInterview.pause();
+        greenInterview.pause();
+        purpleInterview.pause();
+        redInterview.style.display='block';
+        blueInterview.style.display='none';
+        yellowInterview.style.display='none';
+        orangeInterview.style.display='none';
+        greenInterview.style.display='none';
+        purpleInterview.style.display='none';
+    });
+    $("#orange-circle").click(function(){
+        redInterview.pause();
+        blueInterview.pause();
+        yellowInterview.pause();
+        orangeInterview.play();
+        greenInterview.pause();
+        purpleInterview.pause();
+        redInterview.style.display='none';
+        blueInterview.style.display='none';
+        yellowInterview.style.display='none';
+        orangeInterview.style.display='block';
+        greenInterview.style.display='none';
+        purpleInterview.style.display='none';
+    });
+    $("#green-circle").click(function(){
+        redInterview.pause();
+        blueInterview.pause();
+        yellowInterview.pause();
+        orangeInterview.pause();
+        greenInterview.play();
+        purpleInterview.pause();
+        redInterview.style.display='none';
+        blueInterview.style.display='none';
+        yellowInterview.style.display='none';
+        orangeInterview.style.display='none';
+        greenInterview.style.display='block';
+        purpleInterview.style.display='none';
+    });
+    $("#purple-circle").click(function(){
+        redInterview.pause();
+        blueInterview.pause();
+        yellowInterview.pause();
+        orangeInterview.pause();
+        greenInterview.pause();
+        purpleInterview.play();
+        redInterview.style.display='none';
+        blueInterview.style.display='none';
+        yellowInterview.style.display='none';
+        orangeInterview.style.display='none';
+        greenInterview.style.display='none';
+        purpleInterview.style.display='block';
+    });
+
+    //On finish of interviews, close them
+    blueInterview.onended = function() {
+        blueInterview.style.display='none';
+    };
+    yellowInterview.onended = function() {
+        yellowInterview.style.display='none';
+    };
+    redInterview.onended = function() {
+        redInterview.style.display='none';
+    };
+    orangeInterview.onended = function() {
+        orangeInterview.style.display='none';
+    };
+    greenInterview.onended = function() {
+        greenInterview.style.display='none';
+    };
+    purpleInterview.onended = function() {
+        purpleInterview.style.display='none';
+    };
+
+
     //Continue past first pause
     $("#continue-button").click(function(){
         main_video.play();
         $("#continue-button").hide();
         $("#circle-container-1").hide();
         $("#circle-container-2").hide();
+        redInterview.style.display='none';
+        blueInterview.style.display='none';
+        yellowInterview.style.display='none';
+        orangeInterview.style.display='none';
+        greenInterview.style.display='none';
+        purpleInterview.style.display='none';
     });
 
     // mute and unmute the main video
