@@ -30,10 +30,20 @@ body {
     width: 60%;
 }
 
+#survey {
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
 #submit-button {
     width: 70px;
     height: 50px;
     text-align: center;
+    font-weight: bold;
     background-color: pink;
 }
 
@@ -43,8 +53,7 @@ body {
     background-color: skyblue; /* sample user color */
 }
 
-/* maing page */
-
+/* main page */
 #main-page {
     display: flex;
     justify-content: center;
@@ -97,6 +106,17 @@ body {
 #last-page-instruction {
     color: black;
     font-size: 3vw;
+    font-weight: bold;
+
+    /* make the text unselectable */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
 }
 
 #user-canvas {
