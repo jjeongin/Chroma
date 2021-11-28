@@ -1,9 +1,6 @@
-var current_page = "starting_page"; // "starting_page", "main_page", "last_page"
-
 let userColor;
 
 $(document).ready(function(){
-
     paintingCanvas.initialize();
 
 
@@ -125,6 +122,20 @@ $(document).ready(function(){
     });
 
     // #2. MAIN PAGE
+    // detect the time after the main video has started playing
+    var current_time = 0.0;
+    const main_video = document.getElementById("main-video");
+    main_video.ontimeupdate = function() {pause_video_at_timestamp()};
+    function pause_video_at_timestamp() {
+        current_time = main_video.currentTime;
+        console.log(current_time);
+
+        if (57 <= current_time) {
+            console.log("paused");
+            main_video.pause();
+        }
+    }
+
     // mute and unmute the main video
     $("#muted-svg").click(function(){ // if muted before
         $("#main-video").prop('muted', false); // unmute the video
@@ -197,16 +208,10 @@ $(document).ready(function(){
         $("#survey-result").hide();
         $("#unmuted-svg").hide(); // main video muted by default
         $("#last-page").hide();
-        coord = { x: 0, y: 0 };
-        start_drawing = false;
         // user_color = ; // reset user color to default
 
         $("#starting-page").show(); // restart the starting page
         $("#logo-starting-page").show(); // redisplay the starting logo
-        setTimeout(function() {
-            $("#logo-starting-page").hide();
-            $("#survey").show();
-        }, 4000)
     });
 });
 
