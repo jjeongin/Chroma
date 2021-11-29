@@ -1,5 +1,4 @@
 # Chroma
-CHROMA
 
 
 In the excitement of creating a new film, the first one of most team members, we came up with at least 10 different ideas for what we wanted to do. Upon a long discussion after class, we combined some of them and, taking some inspiration from Middleground and some original concepts, we were set on exploring identity in our film. Thus, Chroma was born. We wanted to create a project that conveyed a message worth sharing and that challenged us to explore and familiarize ourselves with different technologies, pieces of equipment, and software. This bold vision would allow us to do all of this. 
