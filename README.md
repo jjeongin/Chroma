@@ -15,16 +15,17 @@ We intend to provide the user with a unique,  yet wholesome, experience. We want
 
 In order to fulfill our vision and intentions we had to spend many more hours than expected working on this project. The first actions we took were scripting & storyboarding while planning the main clip shooting. For this scene, the planning took significantly longer than expected, as we had to have long conversations with the Equipment center to get the jib and a shooting studio, find a large white roll paper (that we would later find out is not produced in the UAE), figure out where to store 2 bins full of equipment, and find actors who were willing to help during the final weeks of the semester. We needed to do all of this soon, because we knew the editing process was going to be long. 
 
- <img src="Paint Splatter.jpg">
+ <img src="![Animation](https://user-images.githubusercontent.com/90846682/143833864-5a1ce64a-ba24-49cd-b11b-1940d83e017c.jpg)">
+ <img src="![Paint Splatter](https://user-images.githubusercontent.com/90846682/143833832-1835c2aa-972a-421b-877c-d4a85334a956.jpg)">
 
 
 We recorded on Sunday November 21st and set out to post production. Soon after, one of two big challenges arose: the file with the paint -the original idea- was corrupted. Thankfully, we had done a few other takes with no paint and were able to use those. That, however, implied a much longer process of animation that we expected. Kyle spent a few nights working on the animation, while the rest of the team began to assemble and cut the clips. Then, the second big challenge arose: one of our actresses dropped out. We had to find a replacement for her and organize the interviews as such. Thankfully all actors were fine with spending another whole morning on Chroma. We also recorded the narrator’s voice on this day.
 
 After all this hard work, we still had a long way to go. While Kyle graded the interviews, and Juanma assembled the clips, Cole and Jeongin built the website. Communication was key, as they had to know exact frames where to pause the video and display the buttons. The rest of the time was spent fixing details. A few edits were made to the script, the documentation was written. Exporting the color graded videos in a proper format was also a challenge.
  
- <img src="Interviews.jpg">
- <img src="Interviews 3.jpg">
- <img src="Animations.jpg">
+ <img src="![Interviews](https://user-images.githubusercontent.com/90846682/143833761-02325826-abb4-450e-827d-d3c00b66c7db.jpg)">
+ <img src="![Interviews 3](https://user-images.githubusercontent.com/90846682/143833776-ab2053be-91ed-424e-b3ee-4304bcc96fe7.jpg)">
+ 
 
  
 Looking back at the arduous journey, we feel very proud of the final result. Chroma is a very cohesive, interesting and artistic project that we are eager to share in the IM showcase. We decided to make this process a truly educational experience, yet having a learning curve is very rewarding. Most team members will get out of this project dominating two different cameras, a jib, Adobe After Effects,  Adobe Premiere Pro, an H6 recorded,  the intricate booking systems of campus, shoot lighting, scripting and storyboarding. There will always be elements to improve, yet, given the short amount of time we were given, Chroma turned out really well. 
