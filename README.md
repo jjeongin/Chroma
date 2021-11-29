@@ -15,7 +15,7 @@ We intend to provide the user with a unique,  yet wholesome, experience. We want
 
 In order to fulfill our vision and intentions we had to spend many more hours than expected working on this project. The first actions we took were scripting & storyboarding while planning the main clip shooting. For this scene, the planning took significantly longer than expected, as we had to have long conversations with the Equipment center to get the jib and a shooting studio, find a large white roll paper (that we would later find out is not produced in the UAE), figure out where to store 2 bins full of equipment, and find actors who were willing to help during the final weeks of the semester. We needed to do all of this soon, because we knew the editing process was going to be long. 
 
- ![alt text](/Documentation/Animation.JPG)
+ ![alt text](/Documentation/Animation.jpg)
 
 
 We recorded on Sunday November 21st and set out to post production. Soon after, one of two big challenges arose: the file with the paint -the original idea- was corrupted. Thankfully, we had done a few other takes with no paint and were able to use those. That, however, implied a much longer process of animation that we expected. Kyle spent a few nights working on the animation, while the rest of the team began to assemble and cut the clips. Then, the second big challenge arose: one of our actresses dropped out. We had to find a replacement for her and organize the interviews as such. Thankfully all actors were fine with spending another whole morning on Chroma. We also recorded the narrator’s voice on this day.
