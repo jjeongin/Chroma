@@ -42,6 +42,7 @@ body {
 .questionContainer{
     font-family: 'Pacifico', cursive;
     text-align: center;
+    font-size: 2em;
 }
 #question-one-container{
     display:block;
@@ -57,7 +58,7 @@ body {
 }
 
 .question{
-    font-size:3em;
+    font-size:1.5em;
 }
 
 .surveySubmit{
@@ -99,6 +100,7 @@ body {
     background-color: skyblue; /* sample user color */
 }
 .user-color-text{
+    font-weight: bold;
     font-size:2em;
     text-align:center;
 }
