@@ -7,9 +7,9 @@ In the excitement of creating a new film, the first one of most team members, we
 
 Chroma is an interactive video that establishes a connection between identity and color. It is nonfiction and centers around three main characters, each representing a primary color. The white background and theme of the site and the video represent an empty canvas of society. Characters, and the user, add color to this canvas, painting the fabric of humanity. The film is composed of three different types of clips. 
 <ol>
- <li> Main (Recorded with a Black Magic Pocket Cinema 4k): A top down shot of the main characters walking around on a white background.  They are accompanied by a narrator voice, by Tomás Ortiz and Valentin Josan, that explains the movements and brings the abstract concept of the film into words. </li>
- <li> Interviews (Recorded with a Black Magic Pocket Cinema): Three characters are interviewed and discuss their identity in light of their own colors and the interactions they have with each other. </li>
- <li> Paint Splatter (Recorded with a GoPro): A transition, short clip, that was introduced in an attempt to increase the variety and decrease the monotony of the film (was the audience to watch all clips).</li>
+ <li> <b>Main (Recorded with a Black Magic Pocket Cinema 4k):</b> A top down shot of the main characters walking around on a white background.  They are accompanied by a narrator voice, by Tomás Ortiz and Valentin Josan, that explains the movements and brings the abstract concept of the film into words. </li>
+ <li> <b>Interviews (Recorded with a Black Magic Pocket Cinema):</b> Three characters are interviewed and discuss their identity in light of their own colors and the interactions they have with each other. </li>
+ <li> <b>Paint Splatter (Recorded with a GoPro):</b> A transition, short clip, that was introduced in an attempt to increase the variety and decrease the monotony of the film (was the audience to watch all clips).</li>
 </ol>
 The Main, Paint Splatter, and final interview clips will be played sequentially in index.html. However, the video gets paused two times. Buttons come up that indicate the user to click on them to see a specific person or interaction. A pop-up window will then be displayed with a short interview giving insight into the person/interaction. 
 
