@@ -155,6 +155,12 @@ $(document).ready(function(){
         $("#continue-button").hide();
         $("#circle-container-1").hide();
         $("#circle-container-2").hide();
+        redInterview.pause();
+        blueInterview.pause();
+        yellowInterview.pause();
+        orangeInterview.pause();
+        greenInterview.pause();
+        purpleInterview.pause();
         redInterview.style.display='none';
         blueInterview.style.display='none';
         yellowInterview.style.display='none';
