@@ -117,7 +117,7 @@ $(document).ready(function(){
         setTimeout(function() {
             $("#starting-page").hide();
             $("#main-page").show();
-        }, 3500)
+        }, 2000)
     });
 
     // #2. MAIN PAGE
@@ -149,11 +149,25 @@ $(document).ready(function(){
         }
     }
 
+    //Continue past first pause
+    $("#continue-button").click(function(){
+        main_video.play();
+        $("#continue-button").hide();
+        $("#circle-container-1").hide();
+        $("#circle-container-2").hide();
+        redInterview.style.display='none';
+        blueInterview.style.display='none';
+        yellowInterview.style.display='none';
+        orangeInterview.style.display='none';
+        greenInterview.style.display='none';
+        purpleInterview.style.display='none';
+    });
+
     const blueInterview = document.getElementById("blue-interview");
     const redInterview = document.getElementById("red-interview");
     const yellowInterview = document.getElementById("yellow-interview");
-    const greenInterview = document.getElementById("orange-interview");
-    const orangeInterview = document.getElementById("green-interview");
+    const greenInterview = document.getElementById("green-interview");
+    const orangeInterview = document.getElementById("orange-interview");
     const purpleInterview = document.getElementById("purple-interview");
 
     //On clicks of circles, show interviews
@@ -261,21 +275,6 @@ $(document).ready(function(){
     purpleInterview.onended = function() {
         purpleInterview.style.display='none';
     };
-
-
-    //Continue past first pause
-    $("#continue-button").click(function(){
-        main_video.play();
-        $("#continue-button").hide();
-        $("#circle-container-1").hide();
-        $("#circle-container-2").hide();
-        redInterview.style.display='none';
-        blueInterview.style.display='none';
-        yellowInterview.style.display='none';
-        orangeInterview.style.display='none';
-        greenInterview.style.display='none';
-        purpleInterview.style.display='none';
-    });
 
     // mute and unmute the main video
     $("#muted-svg").click(function(){ // if muted before
